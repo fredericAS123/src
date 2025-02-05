@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+
 )
 
 ## System dependencies are found with CMake's conventions
@@ -204,7 +205,27 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-add_executable(sub_node src/sub_node.cpp)
+find_package(Eigen3)
+include_directories(
+        /usr/include/eigen3
+)
+add_executable(sub_node src/sub_node.cpp )
 target_link_libraries(sub_node
+  ${catkin_LIBRARIES}
+)
+include_directories(src)
+
+add_library(a1lib
+  src/Utils.cpp
+  src/filter.hpp
+  src/sub_node_h.cpp
+  src/Utils.h
+  src/A1Params.h
+  src/sub_node.h
+  src/A1CtrlStates.h
+  src/A1Kinematics.h
+  src/A1Kinematics.cpp
+)
+target_link_libraries(sub_node a1lib
   ${catkin_LIBRARIES}
 )

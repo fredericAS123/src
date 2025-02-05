@@ -1,0 +1,44 @@
+catkin_make编译
+source
+roslaunch g308_test4 control_robot.launch 启动gazebo
+rosrun control simRobot.py 发布数据和键盘输入
+
+因为我使用的python，你应该是用c++
+我写了个test.py文件示例了一下订阅的数据和发布的数据
+然后输入x可以增大或减小每个关节的力矩，举个例子来看看效果
+
+仿真数据 topic:/simulation_data 数据类型:std_msgs.msg中的Float64MultiArray
+包含 ：
+每个关节的转动位置(12个)，
+每个关节的转动加速度(12个)，
+每个关节的力矩(12个)，
+位姿信息(四元数x,y,z,w，即马头yaw,pitch,roll)，
+转动速度(绕x,y,z轴转的角速度)，
+commands(x,y,yaw的速度)
+
+发布的关节力矩数据 topic:/commands 数据类型：std_msgs.msg中的Float64MultiArray
+关节的顺序
+    """
+    i 0--11
+    name: 
+  - FL_calf_joint
+  - FL_hip_joint
+  - FL_thigh_joint
+  - FR_calf_joint
+  - FR_hip_joint
+  - FR_thigh_joint
+  - RL_calf_joint
+  - RL_hip_joint
+  - RL_thigh_joint
+  - RR_calf_joint
+  - RR_hip_joint
+  - RR_thigh_joint
+    """
+
+键盘输入：w/s对应x方向的速度输入
+        d/a对应y方向的速度输入
+        e/q对应yaw的速度输入
+        空格清空x,y,yaw
+        r让模型回到原点(还有点bug，要都按几次)
+
+

@@ -1,0 +1,212 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"include",
+			"generate_messages",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"build/robot_msgs/cmake/robot_msgs-genmsg.cmake",
+			"/opt/ros/noetic/share/genmsg/cmake/genmsg-extras.cmake",
+			"robot_msgs/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 20,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 307,
+				"parent" : 1
+			},
+			{
+				"file" : 0,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 401,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 404,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 407,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 162,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 166,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 168,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 170,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 164,
+				"parent" : 3
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 5,
+			"id" : "std_msgs_generate_messages_eus::@a06da966ec71d8a337a9"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "geometry_msgs_generate_messages_eus::@288e99e65ca6a43b1c1e"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "sensor_msgs_generate_messages_eus::@288e99e65ca6a43b1c1e"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "_robot_msgs_generate_messages_check_deps_MotorCommand::@288e99e65ca6a43b1c1e"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "_robot_msgs_generate_messages_check_deps_RobotCommand::@288e99e65ca6a43b1c1e"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "_robot_msgs_generate_messages_check_deps_RobotState::@288e99e65ca6a43b1c1e"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "_robot_msgs_generate_messages_check_deps_IMU::@288e99e65ca6a43b1c1e"
+		},
+		{
+			"backtrace" : 12,
+			"id" : "_robot_msgs_generate_messages_check_deps_MotorState::@288e99e65ca6a43b1c1e"
+		}
+	],
+	"id" : "robot_msgs_generate_messages_eus::@288e99e65ca6a43b1c1e",
+	"name" : "robot_msgs_generate_messages_eus",
+	"paths" : 
+	{
+		"build" : "robot_msgs",
+		"source" : "robot_msgs"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/robot_msgs/CMakeFiles/robot_msgs_generate_messages_eus",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/robot_msgs/CMakeFiles/robot_msgs_generate_messages_eus.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/share/roseus/ros/robot_msgs/msg/MotorCommand.l.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/share/roseus/ros/robot_msgs/msg/MotorState.l.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/share/roseus/ros/robot_msgs/msg/RobotCommand.l.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/share/roseus/ros/robot_msgs/msg/RobotState.l.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/share/roseus/ros/robot_msgs/msg/IMU.l.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/share/roseus/ros/robot_msgs/manifest.l.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

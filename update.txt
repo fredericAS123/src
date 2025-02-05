@@ -1,0 +1,5 @@
+1、使用新模型
+2、添加gazebo暂停,启动功能  按下enter键暂停或启动gazebo
+3、删除键盘 i 功能
+
+使用roslaunch g308_km1 control_robot.launch

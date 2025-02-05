@@ -1,0 +1,8 @@
+prefix=/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/devel
+
+Name: sub_pkg
+Description: Description of sub_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

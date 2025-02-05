@@ -1,0 +1,8 @@
+prefix=/home/g308/gazebo_qianli_test/src/build/devel
+
+Name: g308_km1
+Description: Description of g308_km1
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

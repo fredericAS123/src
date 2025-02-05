@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,liba1lib.so -o ../devel/lib/liba1lib.so CMakeFiles/a1lib.dir/src/Utils.cpp.o CMakeFiles/a1lib.dir/src/sub_node_h.cpp.o CMakeFiles/a1lib.dir/src/A1Kinematics.cpp.o 

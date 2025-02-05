@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: g308_km1
+Description: Description of g308_km1
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

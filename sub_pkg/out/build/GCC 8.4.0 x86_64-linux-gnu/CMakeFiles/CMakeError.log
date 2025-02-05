@@ -1,0 +1,290 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_43cdd/fast && /usr/bin/make -f CMakeFiles/cmTC_43cdd.dir/build.make CMakeFiles/cmTC_43cdd.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_43cdd.dir/src.c.o
+/usr/bin/gcc-8   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_43cdd.dir/src.c.o   -c "/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_43cdd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43cdd.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_43cdd.dir/src.c.o  -o cmTC_43cdd 
+/usr/bin/ld: CMakeFiles/cmTC_43cdd.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_43cdd.dir/build.make:87：cmTC_43cdd] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_43cdd/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_492bd/fast && /usr/bin/make -f CMakeFiles/cmTC_492bd.dir/build.make CMakeFiles/cmTC_492bd.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_492bd.dir/CheckFunctionExists.c.o
+/usr/bin/gcc-8   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_492bd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_492bd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_492bd.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_492bd.dir/CheckFunctionExists.c.o  -o cmTC_492bd  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_492bd.dir/build.make:87：cmTC_492bd] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_492bd/fast] 错误 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_46ce3/fast && /usr/bin/make -f CMakeFiles/cmTC_46ce3.dir/build.make CMakeFiles/cmTC_46ce3.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_46ce3.dir/src.c.o
+/usr/bin/gcc-8   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_46ce3.dir/src.c.o   -c "/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_46ce3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46ce3.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_46ce3.dir/src.c.o  -o cmTC_46ce3 
+/usr/bin/ld: CMakeFiles/cmTC_46ce3.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_46ce3.dir/build.make:87：cmTC_46ce3] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_46ce3/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bcd91/fast && /usr/bin/make -f CMakeFiles/cmTC_bcd91.dir/build.make CMakeFiles/cmTC_bcd91.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_bcd91.dir/CheckFunctionExists.c.o
+/usr/bin/gcc-8   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_bcd91.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bcd91
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcd91.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_bcd91.dir/CheckFunctionExists.c.o  -o cmTC_bcd91  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_bcd91.dir/build.make:87：cmTC_bcd91] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_bcd91/fast] 错误 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ed390/fast && /usr/bin/make -f CMakeFiles/cmTC_ed390.dir/build.make CMakeFiles/cmTC_ed390.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_ed390.dir/src.c.o
+/usr/bin/gcc-8   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ed390.dir/src.c.o   -c "/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_ed390
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed390.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_ed390.dir/src.c.o  -o cmTC_ed390 
+/usr/bin/ld: CMakeFiles/cmTC_ed390.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_ed390.dir/build.make:87：cmTC_ed390] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_ed390/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c4860/fast && /usr/bin/make -f CMakeFiles/cmTC_c4860.dir/build.make CMakeFiles/cmTC_c4860.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_c4860.dir/CheckFunctionExists.c.o
+/usr/bin/gcc-8   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c4860.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c4860
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4860.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c4860.dir/CheckFunctionExists.c.o  -o cmTC_c4860  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_c4860.dir/build.make:87：cmTC_c4860] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_c4860/fast] 错误 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f7593/fast && /usr/bin/make -f CMakeFiles/cmTC_f7593.dir/build.make CMakeFiles/cmTC_f7593.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_f7593.dir/src.c.o
+/usr/bin/gcc-8   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f7593.dir/src.c.o   -c "/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_f7593
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7593.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_f7593.dir/src.c.o  -o cmTC_f7593 
+/usr/bin/ld: CMakeFiles/cmTC_f7593.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f7593.dir/build.make:87：cmTC_f7593] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_f7593/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2238f/fast && /usr/bin/make -f CMakeFiles/cmTC_2238f.dir/build.make CMakeFiles/cmTC_2238f.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_2238f.dir/CheckFunctionExists.c.o
+/usr/bin/gcc-8   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2238f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2238f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2238f.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2238f.dir/CheckFunctionExists.c.o  -o cmTC_2238f  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_2238f.dir/build.make:87：cmTC_2238f] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_2238f/fast] 错误 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1acdd/fast && /usr/bin/make -f CMakeFiles/cmTC_1acdd.dir/build.make CMakeFiles/cmTC_1acdd.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_1acdd.dir/src.c.o
+/usr/bin/gcc-8   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_1acdd.dir/src.c.o   -c "/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_1acdd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1acdd.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_1acdd.dir/src.c.o  -o cmTC_1acdd 
+/usr/bin/ld: CMakeFiles/cmTC_1acdd.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_1acdd.dir/build.make:87：cmTC_1acdd] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_1acdd/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_23c87/fast && /usr/bin/make -f CMakeFiles/cmTC_23c87.dir/build.make CMakeFiles/cmTC_23c87.dir/build
+make[1]: 进入目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_23c87.dir/CheckFunctionExists.c.o
+/usr/bin/gcc-8   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_23c87.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_23c87
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23c87.dir/link.txt --verbose=1
+/usr/bin/gcc-8  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_23c87.dir/CheckFunctionExists.c.o  -o cmTC_23c87  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_23c87.dir/build.make:87：cmTC_23c87] 错误 1
+make[1]: 离开目录“/home/g308/gazebo_qianli_test/src/sub_pkg/out/build/GCC 8.4.0 x86_64-linux-gnu/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_23c87/fast] 错误 2
+
+
+
