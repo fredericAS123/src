@@ -10,6 +10,7 @@ from robot_msgs.msg import MotorCommand
 from sensor_msgs.msg import Imu
 from std_srvs.srv import Empty
 import time
+import numpy as np
 
 def KeyboardInterface(key):
     try:
@@ -31,11 +32,11 @@ def KeyboardInterface(key):
                 state.control.y = 0.
                 state.control.yaw = 0.
                 ResetModel()
-            # elif key.char == 'i':
-            #     state.control.x = 0.
-            #     state.control.y = 0.
-            #     state.control.yaw = 0.
-            #     InitModel()
+            elif key.char == 'i':
+                state.control.x = 0.
+                state.control.y = 0.
+                state.control.yaw = 0.
+                InitModel()
         else:
             if key == keyboard.Key.space:
                 state.control.x = 0.
@@ -118,6 +119,13 @@ def RRContactCallback(msg):
     state.contact_force.forces[3] = msg.wrench.force.z
 
 def RunModel():
+    mapped_data = [state.mapped_data.run_data[i] for i in range(12)]
+    if np.mean(mapped_data) != 0 and np.var(mapped_data) != 0:
+        for i in range(12):
+            publisher_command_commands[i].kp = 0.
+            publisher_command_commands[i].kd = 0.
+            joint_publishers[joint_name[i]].publish(publisher_command_commands[i])
+
     for i in range(12):
         publisher_command_commands[i].tau = state.mapped_data.run_data[i]
         # print(publisher_command_commands)
@@ -177,28 +185,53 @@ def ResetModel():
         publisher_command_commands[i].tau = 0.0
         joint_publishers[joint_name[i]].publish(publisher_command_commands[i])
     
-# def InitModel():
-#     set_model_state = SetModelStateRequest().model_state
-#     gazebo_model_name = 'myrobot'
-#     set_model_state.model_name = gazebo_model_name
-#     set_model_state.pose.position.z = 0.5
-#     set_model_state.pose.orientation.x = 0.
-#     set_model_state.pose.orientation.y= 0.
-#     set_model_state.pose.orientation.z= 0.
-#     set_model_state.pose.orientation.w= 0.
-#     set_model_state.reference_frame = 'ground_plane'
-#     gazebo_set_model_state_client(set_model_state)
+def InitModel():
+    # set_model_state = SetModelStateRequest().model_state
+    # gazebo_model_name = 'myrobot'
+    # set_model_state.model_name = gazebo_model_name
+    # set_model_state.pose.position.z = 0.45
+    # set_model_state.pose.orientation.x = 0.
+    # set_model_state.pose.orientation.y= 0.
+    # set_model_state.pose.orientation.z= 0.
+    # set_model_state.pose.orientation.w= 0.
+    # set_model_state.reference_frame = 'ground_plane'
+    # gazebo_set_model_state_client(set_model_state)
 
-#     for i in range(12):
-#         publisher_command_commands[i].tau = 0.0
-#         publisher_command_commands[i].q = -0.0
-#         publisher_command_commands[i].kp = 100.
-#         publisher_command_commands[i].kd = 1.
-#         if i in [0,3,6,9]:
-#             publisher_command_commands[i].q = -1.
-#         if i in [2,5,8,11]:
-#             publisher_command_commands[i].q = 0.7
-#         joint_publishers[joint_name[i]].publish(publisher_command_commands[i])
+    # for i in range(12):
+    #     publisher_command_commands[i].tau = 0.0
+    #     publisher_command_commands[i].q = -0.0
+    #     publisher_command_commands[i].kp = 40.
+    #     publisher_command_commands[i].kd = 5.
+    #     if i in [0,3,6,9]:
+    #         publisher_command_commands[i].q = -0.4
+    #     if i in [2,5,8,11]:
+    #         publisher_command_commands[i].q = 0.4
+    #     joint_publishers[joint_name[i]].publish(publisher_command_commands[i])
+
+    for i in [2,5,8,11]:
+        publisher_command_commands[i].tau = 0.0
+        publisher_command_commands[i].q = 0.4
+        publisher_command_commands[i].kp = 40.
+        publisher_command_commands[i].kd = 5.
+        joint_publishers[joint_name[i]].publish(publisher_command_commands[i])
+    
+    time.sleep(0.1)
+
+    for i in [6,9]:
+        publisher_command_commands[i].tau = 0.0
+        publisher_command_commands[i].q = -0.3
+        publisher_command_commands[i].kp = 80.
+        publisher_command_commands[i].kd = 5.
+        joint_publishers[joint_name[i]].publish(publisher_command_commands[i])
+
+    time.sleep(0.4)
+
+    for i in [0,3]:
+        publisher_command_commands[i].tau = 0.0
+        publisher_command_commands[i].q = -0.3
+        publisher_command_commands[i].kp = 40.
+        publisher_command_commands[i].kd = 5.
+        joint_publishers[joint_name[i]].publish(publisher_command_commands[i])
 
 #     while True:
 #         publisher_command_commands[0].tau = 20.0

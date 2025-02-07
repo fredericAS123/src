@@ -16,6 +16,7 @@ public:
 
 private:
     ros::NodeHandle nh;  // ROS 节点句柄，用于与 ROS 系统交互
+    ros::Subscriber sub;
     A1CtrlStates a1_ctrl_states;
     A1Kinematics a1_kin;
     double leg_offset_x[4] = {};  // 机器人四条腿的 x 偏移量
